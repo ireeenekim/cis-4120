@@ -1,0 +1,218 @@
+:root {
+    --penn-blue: #011F5B;
+    --penn-red: #990000;
+    --bg-color: #F2F2F2;
+    --section-bg: #DCE3EF;
+    --section-text: #011F5B;
+    --input-border: #8E8E93;
+    --white: #FFFFFF;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: Georgia, "Times New Roman", Times, serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background-color: #333;
+}
+
+.app-container {
+    width: 440px;
+    height: 956px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header {
+    background-color: var(--penn-blue);
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shield-container {
+    width: 30px;
+    height: 36px;
+    position: relative;
+}
+
+.shield-bg {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-inner {
+    width: 26px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+}
+
+.shield-top {
+    flex: 1;
+    background-color: white; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.shield-top::after {
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-color: var(--penn-blue);
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+    position: absolute;
+    top: 0;
+}
+
+.dot { 
+    width: 4px; 
+    height: 4px; 
+    background: var(--penn-blue); 
+    border-radius: 50%; 
+    z-index: 2; 
+    margin-top: 8px;
+}
+
+.shield-bottom {
+    flex: 1.2;
+    background-color: var(--penn-red);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shield-bottom::before {
+    content: "";
+    width: 70%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 3px;
+}
+
+.logo-text {
+    color: var(--white);
+    font-family: var(--font-serif);
+    font-size: 26px;
+    letter-spacing: 0.5px;
+}
+
+.sub-header {
+    background-color: var(--penn-red);
+    padding: 18px 20px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.notification-icon svg {
+    fill: var(--white);
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.panel {
+    padding: 20px 16px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 16px;
+    color: #333;
+    background-color: var(--white);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+.chevron-down {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-60%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid #333;
+    border-bottom: 1.5px solid #333;
+    pointer-events: none;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--penn-blue);
+    color: var(--white);
+    border: none;
+    padding: 14px 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.section-header {
+    background-color: var(--section-bg);
+    color: var(--section-text);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
